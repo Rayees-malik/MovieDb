@@ -1,0 +1,49 @@
+
+.imagedisplay{
+    width:220px;
+    height: 220px;
+    padding: 8px;
+    display: inline-block;
+    margin-left: 60px;
+}
+.cardimagedisplay{
+    width:220px;
+    height: 220px;
+    padding: 8px;
+    display: inline-block;
+}
+
+
+
+.detailsdisplay a{
+
+    margin-left:140px;
+    text-decoration: none;
+
+}
+.captiondisplay{
+
+    margin-left:120px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+.navbar-brand{
+
+    margin: 10px;
+    font-weight: bold;
+}
+
+
+.navbar a {
+
+    color: white;
+padding:2px;
+margin-left:60px;
+text-decoration: none;
+}
+
+.drop a{
+    color:black
+}
