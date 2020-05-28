@@ -23,7 +23,7 @@ export function getpersonDetails(api_key, person_id) {
     return (dispatch, getState) => {
 
         axios
-            .get("https://api.themoviedb.org/3/person/"+person_id+"/movie_credits?api_key="+api_key)
+            .get("https://api.themoviedb.org/3/person/" + person_id + "/movie_credits?api_key=" + api_key)
 
             .then((response) => {
                 dispatch(personDetails(response))

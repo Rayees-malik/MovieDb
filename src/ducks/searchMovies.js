@@ -23,10 +23,12 @@ export function getsearchMovies(api_key, search) {
     return (dispatch, getState) => {
 
         axios
-            .get("https://api.themoviedb.org/3/search/movie?api_key="+api_key,{params: {
+            .get("https://api.themoviedb.org/3/search/movie?api_key=" + api_key, {
+                params: {
 
-                query: search
-              }})  .then((response) => {
+                    query: search
+                }
+            }).then((response) => {
                 dispatch(searchMovies(response))
             })
 

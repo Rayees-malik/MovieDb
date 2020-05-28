@@ -17,7 +17,7 @@ function Persondetails(props) {
         return store.personDetails.data
     })
 
-   
+
 
     console.log(person_store);
 
@@ -30,22 +30,23 @@ function Persondetails(props) {
 
 
     return (
-        <><br/>
-        <h1>Person Details</h1>
-        <br/>
-            {person_store?person_store.data.cast.map((person)=>{
+        <><br />
+            <h1 style={{ color:"#FF6347"}}>Person Details</h1>
+            <br />
+            {person_store ? person_store.data.cast.map((person) => {
 
-            return person.poster_path? <Table striped bordered hover size="sm">
+                return person.poster_path ? <Table striped bordered hover size="sm">
 
-            <tbody>
-                <tr>
-                    <td style={{ width: "100px" ,height:"200px" }}><img height="300px" width="300px" alt="image not available" src={base_url + person.poster_path} /></td>
-            <td style={{ width: "600px" ,height:"200px"}}> {person.title}{person.overview}</td>
-                    <td style={{ width: "200px",height:"200px" }}><img width="25px" height="25px" src={Star}/> &nbsp;&nbsp;{person.vote_average}</td>
-                </tr>
-            
-            </tbody>
-            </Table>:null}):null}
+                    <tbody>
+                        <tr>
+                            <td style={{ width: "100px", height: "200px" }}><img height="300px" width="300px" alt="image not available" src={base_url + person.poster_path} /></td>
+                            <td style={{ width: "600px", height: "200px" }}> {person.title}{person.overview}</td>
+                            <td style={{ width: "200px", height: "200px" }}><img width="25px" height="25px" src={Star} /> &nbsp;&nbsp;{person.vote_average}</td>
+                        </tr>
+
+                    </tbody>
+                </Table> : null
+            }) : null}
         </>
     );
 }

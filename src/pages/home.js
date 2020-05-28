@@ -26,6 +26,13 @@ function Home() {
   }, [])
   return (
     <>
+      {store ? store.data.results.map((headerImages) => {
+        return <><img width="31px" height="31px" style={{ display: "inline", margin: "16px" }} src={base_url + headerImages.poster_path} /> &nbsp;</>
+
+      }) : null}
+      <br /><br />
+
+      <h1 style={{ textAlign: "center", color: "#FF6347	" }}>MovieDB</h1><br />
       {store ? store.data.results.map((item) => {
 
         return <Figure>
@@ -38,13 +45,14 @@ function Home() {
             {item.vote_average}
           </Figure.Caption>
           <Figure.Caption className="detailsdisplay">
-            <Link to={{ pathname: "/moviedetails/", state: { movie_id: item.id } }}>Details</Link>
+            <Link to={{ pathname: "/moviedetails/"+item.id, state: { movie_id: item.id } }}>Details</Link>
           </Figure.Caption>
         </Figure>
 
       }) : null
 
       }
+
     </>
   );
 }

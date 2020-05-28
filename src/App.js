@@ -8,13 +8,13 @@ import Moviedetails from './pages/movieDetails.js'
 import Top_rated from './pages/toprated.js'
 import Person_details from './pages/personDetails.js'
 import Search_movies from './pages/searchMovies.js'
-import { BrowserRouter as Router, Route,useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route,  } from "react-router-dom";
 import Header from './components/header.js'
 import Footer from './components/footer.js'
+import Tv_shows  from './pages/tvshows';
 
-function App(props) {
+function App() {
 
-  console.log(props)
   return (
 
     <Router>
@@ -22,13 +22,14 @@ function App(props) {
 
       <Route path='/' exact component={Home} />
       <Route path='/trending' exact component={Trending} />
-      <Route path='/moviedetails'  exact component={Moviedetails} />
+      <Route path='/moviedetails/:movie_id' exact component={Moviedetails} />
       <Route path='/toprated' exact component={Top_rated} />
-      <Route path='/persondetails' exact component={Person_details} />
+      <Route path='/persondetails/:person_id' exact component={Person_details} />
       <Route path='/searchmovies' exact component={Search_movies} />
+      <Route path='/tvshows' exact component={Tv_shows} />
 
 
-<Footer/>
+      <Footer />
 
     </Router>
   );

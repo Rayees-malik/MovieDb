@@ -29,22 +29,23 @@ function Toprated() {
   }, [])
   return (
     <>
-<h1>Top Rated Movies</h1><br/>
+      <h1 style={{ color:"#FF6347"}}>Top Rated Movies</h1><br />
 
-    {store?store.data.results.map((top)=>{
+      {store ? store.data.results.map((top) => {
 
-return  <Table striped bordered hover size="sm">
+        return <Table striped bordered hover size="sm">
 
-<tbody>
-    <tr>
-        <td style={{ width: "50px" }}><img height="40px" width="40px" alt="image not available" src={base_url + top.poster_path} /></td>
-        <td style={{ width: "300px" }}> <Link to={{ pathname: "/moviedetails", state: { movie_id: top.id } }}>{top.title}</Link></td>
-        <td style={{ width: "200px" }}><img width="25px" height="25px" src={Star}/> &nbsp;&nbsp;{top.vote_average}</td>
-    </tr>
+          <tbody>
+            <tr>
+              <td style={{ width: "50px" }}><img height="40px" width="40px" alt="image not available" src={base_url + top.poster_path} /></td>
+              <td style={{ width: "300px" }}> <Link to={{ pathname: "moviedetails/"+top.id, state: { movie_id: top.id } }}>{top.title}</Link></td>
+              <td style={{ width: "200px" }}><img width="25px" height="25px" src={Star} /> &nbsp;&nbsp;{top.vote_average}</td>
+            </tr>
 
-</tbody>
-</Table>}):null}
-      
+          </tbody>
+        </Table>
+      }) : null}
+
     </>
   );
 }

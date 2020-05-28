@@ -6,7 +6,7 @@ function Footer() {
         <>
 
             <Card className="text-center">
-                <Card.Header><h3>MOVIE DB API</h3></Card.Header>
+                <Card.Header><h3 style={{ color:"#FF6347"}}>MOVIE DB API</h3></Card.Header>
                 <Card.Body>
                     <Card.Title>Designed by <h2 style={{color:"blue"}}>Rayees Malik</h2></Card.Title>
                     <Card.Text>

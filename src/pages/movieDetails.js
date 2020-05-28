@@ -11,6 +11,7 @@ import Star from './star.png'
 function Moviedetails(props) {
 
     const movie_id = props.location.state.movie_id
+    console.log(movie_id)
     const api_key = "5add7b6e033ad6399931f3003a7e2229"
 
     const dispatch = useDispatch();
@@ -61,7 +62,7 @@ function Moviedetails(props) {
                 </>
                 : null}
 
-            <h2>Cast and Crew</h2><br />
+            <h2 style={{ color:"#FF6347"}}>Cast and Crew</h2><br />
             {cast_store ? cast_store.data.cast.map((cast) => {
 
                 return cast.profile_path ? <Table striped bordered hover size="sm">
@@ -69,7 +70,7 @@ function Moviedetails(props) {
                     <tbody>
                         <tr>
                             <td style={{ width: "50px" }}><img height="40px" width="40px" alt="image not available" src={base_url + cast.profile_path} /></td>
-                            <td style={{ width: "300px" }}> <Link to={{ pathname: "/persondetails", state: { person_id: cast.id } }}>{cast.name}</Link></td>
+                            <td style={{ width: "300px" }}> <Link to={{ pathname: "/persondetails/"+cast.id, state: { person_id: cast.id } }}>{cast.name}</Link></td>
                             <td style={{ width: "200px" }}>{cast.character}</td>
                         </tr>
 
@@ -81,7 +82,7 @@ function Moviedetails(props) {
 
             <br /><br />
 
-            <h1>Production</h1> <br />
+            <h1 style={{ color:"#FF6347"}}>Production</h1> <br />
 
             {store ? store.data.production_companies.map((companies) => {
 
